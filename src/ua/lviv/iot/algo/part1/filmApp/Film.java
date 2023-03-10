@@ -13,11 +13,6 @@ public class Film {
     private int year;
     private int rating;
     private int marks;
-    //private static Film defaultFilm = null;
-    //public static Film getInstance() {
-    //   if (defaultFilm == null) {
-    //       defaultFilm = new Film()
-    //} return defaultFilm;
     private static Film defaultFilm = new Film();
 
     public static Film getInstance() {
@@ -35,19 +30,19 @@ public class Film {
     }
 
     public double getCurrentRating() {
-        System.out.print("Середній рейтинг фільму: ");
         return (double) rating / marks;
     }
 
     public static void main(String[] args) {
-        Film[] films = new Film[3];
+        Film[] films = new Film[4];
 
         films[0] = new Film();
         films[1] = new Film("Титанік", "Джеймс Кемерон", 1997, 100, 12);
         films[2] = Film.getInstance();
+        films[3] = Film.getInstance();
 
         films[1].rate(20);
-        System.out.println(films[1].getCurrentRating());
+        System.out.println("Середній рейтинг фільму: " + films[1].getCurrentRating());
 
 
         int i = 0;
