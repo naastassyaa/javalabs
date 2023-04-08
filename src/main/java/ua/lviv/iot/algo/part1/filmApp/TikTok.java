@@ -4,6 +4,7 @@ import lombok.*;
 
 @Setter
 @Getter
+@NoArgsConstructor
 @ToString(callSuper = true)
 public class TikTok extends Video {
     private String nameOfSong;

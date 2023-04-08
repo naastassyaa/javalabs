@@ -5,6 +5,7 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
+@NoArgsConstructor
 
 public abstract class Video {
     protected String titleOfVideo;

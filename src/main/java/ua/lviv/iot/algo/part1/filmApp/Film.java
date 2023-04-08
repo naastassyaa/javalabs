@@ -4,6 +4,7 @@ import lombok.*;
 
 @Setter
 @Getter
+@NoArgsConstructor
 @ToString(callSuper = true)
 
 public class Film extends Video {

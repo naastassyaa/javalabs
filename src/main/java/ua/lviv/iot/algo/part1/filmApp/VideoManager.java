@@ -1,11 +1,11 @@
 package ua.lviv.iot.algo.part1.filmApp;
-
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class VideoManager {
 
-    private static ArrayList<Video> videos = new ArrayList<>();
+    private static final ArrayList<Video> videos = new ArrayList<>();
 
     public static void main(String[] args) {
         VideoManager.addVideo(new Film("Титанік", "Джеймс Кемерон", 1997, 56, 12));
@@ -33,13 +33,22 @@ public class VideoManager {
         videos.add(video);
     }
 
-    public static void findAllWithYearMoreThan(int year) {
+    public static List<Video> findAllWithYearMoreThan(int year) {
         System.out.println("Відео, які випущені пізніше за " + year + ":");
-        videos.stream().filter(v -> (v.getYear() > year)).toList().forEach(System.out::println);
+        List<Video> result = videos.stream().filter(v -> (v.getYear() > year)).toList();
+        result.forEach(System.out::println);
+        return result;
     }
 
-    public static void findAllWithSameDirector(String director) {
+    public static List<Video> findAllWithSameDirector(String director) {
         System.out.println("Відео, випущені режисером " + director + ":");
-        videos.stream().filter(v -> (Objects.equals(v.getDirector(), director))).toList().forEach(System.out::println);
+        List<Video> result = videos.stream().filter(v -> (Objects.equals(v.getDirector(), director))).toList();
+        result.forEach(System.out::println);
+        return result;
     }
+
+    public ArrayList<Video> getVideos() {
+        return videos;
+    }
+
 }
