@@ -13,15 +13,17 @@ public class TikTok extends Video {
     private int views;
     private int comments;
 
-    public TikTok(String titleOfVideo, String director, int year, String nameOfSong, String typeOfTikTok, int comments, int likes, int views) {
+    public TikTok(final String titleOfVideo, final String director,
+                  final int year, final String mNameOfSong,
+                  final String mTypeOfTikTok, final int mComments,
+                  final int mLikes, final int mViews) {
         super(titleOfVideo, director, year);
-        this.nameOfSong = nameOfSong;
-        this.comments = comments;
-        this.likes = likes;
-        this.views = views;
-        this.typeOfTikTok = typeOfTikTok;
+        nameOfSong = mNameOfSong;
+        comments = mComments;
+        likes = mLikes;
+        views = mViews;
+        typeOfTikTok = mTypeOfTikTok;
     }
-
     public double getCurrentRating() {
         return (double) (likes + comments) / views;
     }

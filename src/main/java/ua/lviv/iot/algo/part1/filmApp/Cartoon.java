@@ -1,6 +1,9 @@
 package ua.lviv.iot.algo.part1.filmApp;
 
-import lombok.*;
+import lombok.Setter;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Setter
 @Getter
@@ -14,15 +17,17 @@ public class Cartoon extends Video {
     private int rating;
     private int marks;
 
-    public Cartoon(String titleOfVideo, String director, int year, String genre, int numberOfCharacters, String location, int rating, int marks) {
+    public Cartoon(final String titleOfVideo, final String director,
+                   final int year, final String mGenre,
+                   final int mNumberOfCharacters, final String mLocation,
+                   final int mRating, final int mMarks) {
         super(titleOfVideo, director, year);
-        this.rating = rating;
-        this.marks = marks;
-        this.genre = genre;
-        this.numberOfCharacters = numberOfCharacters;
-        this.location = location;
+        rating = mRating;
+        marks = mMarks;
+        genre = mGenre;
+        numberOfCharacters = mNumberOfCharacters;
+        location = mLocation;
     }
-
     public double getCurrentRating() {
         return (double) rating / marks;
     }

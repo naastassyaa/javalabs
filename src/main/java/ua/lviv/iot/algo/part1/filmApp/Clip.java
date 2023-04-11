@@ -12,12 +12,14 @@ public class Clip extends Video {
     private int likes;
     private int views;
 
-    public Clip(String titleOfVideo, String director, int year, String nameOfSong, String singer, int likes, int views) {
+    public Clip(final String titleOfVideo, final String director,
+                final int year, final String mNameOfSong, final String mSinger,
+                final int mLikes, final int mViews) {
         super(titleOfVideo, director, year);
-        this.nameOfSong = nameOfSong;
-        this.singer = singer;
-        this.likes = likes;
-        this.views = views;
+        nameOfSong = mNameOfSong;
+        singer = mSinger;
+        likes = mLikes;
+        views = mViews;
     }
 
     public double getCurrentRating() {

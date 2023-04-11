@@ -1,12 +1,12 @@
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ua.lviv.iot.algo.part1.filmApp.Clip;
 
 public class ClipTest {
     private Clip clip;
 
-    @Before
+    @BeforeEach
     public void init() {
         clip = new Clip();
     }
@@ -15,6 +15,6 @@ public class ClipTest {
     public void firstValueTest() {
         clip.setLikes(40);
         clip.setViews(200);
-        Assert.assertEquals(0.2, clip.getCurrentRating(), 0.00000001);
+        Assertions.assertEquals(0.2, clip.getCurrentRating(), 0.00000001);
     }
 }

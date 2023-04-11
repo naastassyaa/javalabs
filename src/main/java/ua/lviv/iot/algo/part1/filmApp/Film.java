@@ -11,10 +11,12 @@ public class Film extends Video {
     private int rating;
     private int marks;
 
-    public Film(String titleOfVideo, String director, int year, int rating, int marks) {
+    public Film(final String titleOfVideo,
+                final String director, final int year,
+                final int mRating, final int mMarks) {
         super(titleOfVideo, director, year);
-        this.rating = rating;
-        this.marks = marks;
+        rating = mRating;
+        marks = mMarks;
     }
 
     public double getCurrentRating() {

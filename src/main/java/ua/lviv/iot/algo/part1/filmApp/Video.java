@@ -12,10 +12,11 @@ public abstract class Video {
     protected String director;
     protected int year;
 
-    public Video(String titleOfVideo, String director, int year) {
-        this.titleOfVideo = titleOfVideo;
-        this.director = director;
-        this.year = year;
+    public Video(final String mTitleOfVideo,
+                 final String mDirector, final int mYear) {
+        titleOfVideo = mTitleOfVideo;
+        director = mDirector;
+        year = mYear;
     }
 
     abstract double getCurrentRating();
