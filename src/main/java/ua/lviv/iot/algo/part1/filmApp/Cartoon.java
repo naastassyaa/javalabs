@@ -12,23 +12,21 @@ import lombok.ToString;
 
 public class Cartoon extends Video {
     private String genre;
-    private int numberOfCharacters;
     private String location;
     private int rating;
     private int marks;
 
     public Cartoon(final String titleOfVideo, final String director,
                    final int year, final String mGenre,
-                   final int mNumberOfCharacters, final String mLocation,
+                   final String mLocation,
                    final int mRating, final int mMarks) {
         super(titleOfVideo, director, year);
         rating = mRating;
         marks = mMarks;
         genre = mGenre;
-        numberOfCharacters = mNumberOfCharacters;
         location = mLocation;
     }
-    public double getCurrentRating() {
+    public final double getCurrentRating() {
         return (double) rating / marks;
     }
 }

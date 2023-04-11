@@ -5,30 +5,26 @@ import java.util.Objects;
 
 public class VideoManager {
 
-    private static final ArrayList<Video> videos = new ArrayList<>();
+    private static final ArrayList<Video> VIDEOS = new ArrayList<>();
 
     public static void addVideo(final Video video) {
-        videos.add(video);
+        VIDEOS.add(video);
     }
 
     public static List<Video> findAllWithYearMoreThan(final int year) {
-        System.out.println("Відео, які випущені пізніше за " + year + ":");
-        List<Video> result =
-                videos.stream().filter(v -> v.getYear() > year).toList();
-        result.forEach(System.out::println);
-        return result;
+        return VIDEOS.stream()
+                      .filter(v -> v.getYear() > year)
+                      .toList();
     }
 
     public static List<Video> findAllWithSameDirector(final String director) {
-        System.out.println("Відео, випущені режисером " + director + ":");
-        List<Video> result =
-                videos.stream().filter(v -> Objects.equals(v.getDirector(), director)).toList();
-        result.forEach(System.out::println);
-        return result;
+        return VIDEOS.stream()
+                      .filter(v -> Objects.equals(v.getDirector(), director))
+                      .toList();
     }
 
-    public ArrayList<Video> getVideos() {
-        return videos;
+    public final ArrayList<Video> getVideos() {
+        return VIDEOS;
     }
 
 }

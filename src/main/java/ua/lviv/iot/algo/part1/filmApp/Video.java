@@ -1,6 +1,9 @@
 package ua.lviv.iot.algo.part1.filmApp;
 
-import lombok.*;
+import lombok.Setter;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Setter
 @Getter
@@ -8,9 +11,9 @@ import lombok.*;
 @NoArgsConstructor
 
 public abstract class Video {
-    protected String titleOfVideo;
-    protected String director;
-    protected int year;
+    private String titleOfVideo;
+    private String director;
+    private int year;
 
     public Video(final String mTitleOfVideo,
                  final String mDirector, final int mYear) {

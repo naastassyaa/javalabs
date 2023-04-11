@@ -1,6 +1,9 @@
 package ua.lviv.iot.algo.part1.filmApp;
 
-import lombok.*;
+import lombok.Setter;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Setter
 @Getter
@@ -19,7 +22,7 @@ public class Film extends Video {
         marks = mMarks;
     }
 
-    public double getCurrentRating() {
+    public final double getCurrentRating() {
         return (double) rating / marks;
     }
 }
