@@ -1,0 +1,1 @@
+Main-Class: ua.lviv.iot.algo.part1.filmApp.VideoManager
