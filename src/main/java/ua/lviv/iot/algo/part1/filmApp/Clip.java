@@ -10,6 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class Clip extends Video {
+    public static final String HEADERS = "nameOfSong, singer, likes, views";
     private String nameOfSong;
     private String singer;
     private int likes;
@@ -27,5 +28,13 @@ public class Clip extends Video {
 
     public final double getCurrentRating() {
         return (double) likes / views;
+    }
+    public final String getHeaders() {
+        return HEADERS + ", " + super.getHeaders();
+    }
+
+    public final String toCSV() {
+        return nameOfSong + ", " + singer + ", " + likes
+                + ", " + views + ", " + super.toCSV();
     }
 }

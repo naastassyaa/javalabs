@@ -11,6 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 
 public abstract class Video {
+    public static final String HEADERS = "titleOfVideo, director, year";
     private String titleOfVideo;
     private String director;
     private int year;
@@ -23,4 +24,12 @@ public abstract class Video {
     }
 
     abstract double getCurrentRating();
+
+    public String getHeaders() {
+        return HEADERS;
+    }
+
+    public String toCSV() {
+        return titleOfVideo + ", " + director + ", " + year;
+    }
 }
