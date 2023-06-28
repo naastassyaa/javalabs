@@ -13,18 +13,15 @@ public class VideoManager {
 
     public static List<Video> findAllWithYearMoreThan(final int year) {
         return VIDEOS.stream()
-                      .filter(v -> v.getYear() > year)
-                      .toList();
+                    .filter(v -> v.getYear() > year)
+                    .toList();
     }
-
     public static List<Video> findAllWithSameDirector(final String director) {
         return VIDEOS.stream()
                       .filter(v -> Objects.equals(v.getDirector(), director))
                       .toList();
     }
-
     public final ArrayList<Video> getVideos() {
         return VIDEOS;
     }
-
 }

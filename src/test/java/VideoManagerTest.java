@@ -33,6 +33,7 @@ public class VideoManagerTest {
 
     @Test
     public void testFindAllWithSameDirector() {
+
         List<Video> result = VideoManager.findAllWithSameDirector("Джеймс Кемерон");
         Assertions.assertEquals(1, result.size());
         Assertions.assertEquals("Джеймс Кемерон", result.get(0).getDirector());

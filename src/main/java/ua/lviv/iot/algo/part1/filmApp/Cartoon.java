@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString(callSuper = true)
 
 public class Cartoon extends Video {
+    public static final String HEADERS = "genre, location, rating, marks";
     private String genre;
     private String location;
     private int rating;
@@ -28,5 +29,13 @@ public class Cartoon extends Video {
     }
     public final double getCurrentRating() {
         return (double) rating / marks;
+    }
+    public final String getHeaders() {
+        return HEADERS + ", " + super.getHeaders();
+    }
+
+    public final String toCSV() {
+        return genre + ", " + location + ", " + rating
+                + ", " + marks + ", " + super.toCSV();
     }
 }

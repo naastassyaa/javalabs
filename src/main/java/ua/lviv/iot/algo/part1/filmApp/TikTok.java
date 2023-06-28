@@ -10,6 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class TikTok extends Video {
+    public static final String HEADERS = "nameOfSong, likes, views, comments";
     private String nameOfSong;
     private int likes;
     private int views;
@@ -25,7 +26,16 @@ public class TikTok extends Video {
         likes = mLikes;
         views = mViews;
     }
+
     public final double getCurrentRating() {
         return (double) (likes + comments) / views;
+    }
+
+    public final String getHeaders() {
+        return HEADERS + "," + super.getHeaders();
+    }
+    public final String toCSV() {
+        return nameOfSong + ", " + likes + ", " + views
+                + ", " + ", " + comments + ", " + super.toCSV();
     }
 }
